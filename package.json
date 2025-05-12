@@ -2,7 +2,7 @@
   "name": "countries-info",
   "private": true,
   "type": "module",
-  "homepage": "https://BoyNamedIkenna.github.io/country-explorer/",
+  "homepage": "https://BoyNamedIkenna.github.io/country-explorer",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
