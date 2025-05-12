@@ -8,8 +8,8 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "predploy": "npm run build",
-    "deploy": "gh-pages -d build/client"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
