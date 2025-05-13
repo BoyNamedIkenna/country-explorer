@@ -7,14 +7,11 @@ import { Globe, MapPin, Users } from 'lucide-react';
 let cachedCountries: any[] | null = null;
 
 export async function clientLoader() {
-  if (cachedCountries) return cachedCountries;
 
-  const res = await fetch('https://restcountries.com/v3.1/all');
-  if (!res.ok) throw new Error('Failed to fetch countries');
-  const data = await res.json();
-
-  cachedCountries = data;
-  return data;
+    const res = await fetch('https://restcountries.com/v3.1/all');
+    if (!res.ok) throw new Error('Failed to fetch countries');
+    const data = await res.json();
+    return data;
 }
 
 
@@ -24,7 +21,9 @@ export default function Countries({ loaderData }: Route.ComponentProps) {
 
     const filteredCountries = loaderData.filter((country: any) => {
         const matchesRegion = !region || country.region.toLowerCase() === region.toLowerCase();
-        const matchesSearch = !search || country.name.common.toLowerCase().includes(search.toLowerCase())
+        const matchesSearch = !search ||
+            country.name.common.toLowerCase().includes(search.toLowerCase()) ||
+            (country.capital && country.capital[0] && country.capital[0].toLowerCase().includes(search.toLowerCase()));
         return matchesSearch && matchesRegion
     })
     return (

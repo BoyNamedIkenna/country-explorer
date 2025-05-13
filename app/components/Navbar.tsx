@@ -56,9 +56,6 @@ export default function Navbar() {
           <NavLink to="/countries" className={getNavLinkClass}>
             <span>Countries</span>
           </NavLink>
-          <NavLink to="/about" className={getNavLinkClass}>
-            <span>About</span>
-          </NavLink>
         </nav>
 
         {/* Hamburger */}
